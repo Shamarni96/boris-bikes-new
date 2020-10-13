@@ -14,6 +14,10 @@ describe "#DockingStation" do
       docking_station.docking(Bikes.new) #gives the programme a bike
       expect(docking_station.release_bike.working?).to eq true # so it can be removed on this line.
     end
+
+    it "raises an error if there are no bikes" do
+      expect{docking_station.release_bike}.to raise_error("There are no bikes in the docking station")
+    end
   end
 
   describe "docking" do

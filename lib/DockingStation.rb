@@ -6,13 +6,15 @@ class DockingStation
 
    def release_bike
      if @bike != nil
-    return @bike
+       return @bike
+     else
+       raise "There are no bikes in the docking station"
      end
   end
 
   def docking(bike)
     if @bike == nil
-    @bike = bike
+      @bike = bike
     end
     return @bike
   end
