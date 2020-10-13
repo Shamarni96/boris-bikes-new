@@ -1,4 +1,4 @@
-require 'BorisBikes'
+require 'DockingStation'
 
 #RSpec.describe DockingStation do
 #  describe "#new" do
@@ -13,12 +13,11 @@ describe "#DockingStation" do
     it "removed one bike from the docking station" do
       expect(docking_station.release_bike(1)).to eq 3
       end
-      it "makes a bike variable" do
-      expect(docking_station.release_bike(1)).to bikes
+      #it "makes a bike variable" do
+      #expect(docking_station.release_bike(1)).to
       end
     end
-  end
-  
+
 =begin
 require 'DockingStation'
 
