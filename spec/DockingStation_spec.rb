@@ -10,13 +10,15 @@ describe "#DockingStation" do
 
   describe "#release_bike" do
     docking_station = DockingStation.new()
-    it "removed one bike from the docking station" do
-      expect(docking_station.release_bike(1)).to eq 3
-      end
-      #it "makes a bike variable" do
-      #expect(docking_station.release_bike(1)).to
-      end
+    # it "removed one bike from the docking station" do
+    #   expect(docking_station.release_bike(1)).to eq 3
+    # end
+
+    it "releases a working bike" do
+      expect(docking_station.release_bike(1).working?).to eq nil
     end
+  end
+end
 
 =begin
 require 'DockingStation'

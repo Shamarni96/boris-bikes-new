@@ -5,10 +5,13 @@ class DockingStation
 
    def release_bike(num)
     @num_of_bikes -= num
+    return bike = Bikes.new
    end
 end
 
 class Bikes
+  def working?
+  end
 end
 
 =begin
