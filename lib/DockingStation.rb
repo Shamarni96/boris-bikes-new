@@ -1,16 +1,26 @@
 class DockingStation
+  attr_reader :bike
    def initialize
-     @num_of_bikes = 4
+     @bike = nil
    end
 
-   def release_bike(num)
-    @num_of_bikes -= num
-    return bike = Bikes.new
-   end
+   def release_bike
+     if @bike != nil
+    return @bike
+     end
+  end
+
+  def docking(bike)
+    if @bike == nil
+    @bike = bike
+    end
+    return @bike
+  end
 end
 
 class Bikes
   def working?
+    working = true
   end
 end
 

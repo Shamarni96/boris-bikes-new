@@ -10,12 +10,17 @@ describe "#DockingStation" do
 
   describe "#release_bike" do
     docking_station = DockingStation.new()
-    # it "removed one bike from the docking station" do
-    #   expect(docking_station.release_bike(1)).to eq 3
-    # end
-
     it "releases a working bike" do
-      expect(docking_station.release_bike(1).working?).to eq nil
+      docking_station.docking(Bikes.new) #gives the programme a bike
+      expect(docking_station.release_bike.working?).to eq true # so it can be removed on this line.
+    end
+  end
+
+  describe "docking" do
+    docking_station = DockingStation.new()
+    it "docks a bike" do
+      bike = Bikes.new # makes the object (bike)
+      expect(docking_station.docking(bike)).to eq bike #checks if bike is in the docking_station.
     end
   end
 end
