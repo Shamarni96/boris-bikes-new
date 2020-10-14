@@ -6,27 +6,31 @@ require 'DockingStation'
 #      expect (DockingStation.new(0)).to eq docking_station
 #    end
 
-describe "#DockingStation" do
+describe DockingStation do
 
   describe "#release_bike" do
-    docking_station = DockingStation.new()
     it "releases a working bike" do
-      docking_station.docking(Bikes.new) #gives the programme a bike
-      expect(docking_station.release_bike.working?).to eq true # so it can be removed on this line.
+      subject.docking(Bikes.new) #gives the programme a bike
+      expect(subject.release_bike.working?).to eq true # so it can be removed on this line.
     end
 
     it "raises an error if there are no bikes" do
-      expect{docking_station.release_bike}.to raise_error("There are no bikes in the docking station")
+      expect{subject.release_bike}.to raise_error("There are no bikes in the docking station")
     end
   end
 
   describe "docking" do
-    docking_station = DockingStation.new()
     it "docks a bike" do
       bike = Bikes.new # makes the object (bike)
-      expect(docking_station.docking(bike)).to eq bike #checks if bike is in the docking_station.
+      expect(subject.docking(bike)).to eq bike #checks if bike is in the docking_station.
+    end
+    
+    it "raises error if user attempts to dock a bike" do
+      subject.docking(Bikes.new) # a new bike is created(new bike looking to dock)
+      expect{subject.docking(Bikes.new)}.to raise_error("the dock is full") # docking station raises error because it is full.
     end
   end
+
 end
 
 =begin
